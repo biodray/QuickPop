@@ -7,6 +7,7 @@ Maintainer: Audrey Bourret <audrey.bourret@usherbrooke.ca>
 Depends: R (>= 4.0.0), magrittr, dplyr, ggplot2, ggpubr
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
+Imports: ggplot2, dplyr
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
