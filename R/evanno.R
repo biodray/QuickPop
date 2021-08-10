@@ -1,7 +1,19 @@
-# Compute Evanno by hand
-# read a data.frame with structure summary
-
-
+#' @title Compute Evanno
+#'
+#' @description 
+#' Compute classical Evanno from structure summary file and return a graphic
+#'
+#' @details
+#' more details to come ...
+#'
+#' @param df Dataframe with structure results
+#'
+#' @examples
+#' # provide some examples of how to use your function
+#' summary.str <- data(structure)
+#' compute.evanno(summary.str)
+#'
+#' @export
 compute.evanno <- function(df){
   
   evanno.res <- df %>% dplyr::group_by(k) %>% 
