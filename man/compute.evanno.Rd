@@ -8,6 +8,6 @@ compute.evanno(df)
 Compute classical Evanno from structure summary file
 }
 \examples{
-summary.str = data(structure)
+summary.str <- data(structure)
 compute.evanno(summary.str)
 }
