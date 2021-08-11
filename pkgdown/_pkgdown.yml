@@ -20,7 +20,7 @@ navbar:
       href: reference/index.html
     github:
       icon: fab fa-github fa-lg
-      href: https://biodray.github.io/QuickPop/
+      href: https://github.com/biodray/QuickPop
       
 reference:
 - title: Structure functions

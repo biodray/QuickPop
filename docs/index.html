@@ -50,7 +50,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://biodray.github.io/QuickPop/">
+  <a href="https://github.com/biodray/QuickPop">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -71,11 +71,17 @@
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#quickpop" class="anchor"></a>QuickPop</h1></div>
 <p>Tools to work around population genetics analyses</p>
+<p>This is a work in progress. More functions and vignettes will be added through times…</p>
 <div id="how-to-install-this-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-install-this-package" class="anchor"></a>How to install this package</h2>
-<p>Sys.setenv(“R_REMOTES_NO_ERRORS_FROM_WARNINGS” = “true”)</p>
-<p>library(devtools) install_github(“biodray/QuickPop”)</p>
+<p>You can install directly the last version from github</p>
+<pre class="{r}"><code><a href="https://rdrr.io/r/base/Sys.setenv.html"># Change the behaviours of remotes
+Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = "true")
+
+# Load
+library(remotes)
+remotes::install_github("biodray/QuickPop")</a></code></pre>
 </div>
 <div id="how-to-run-basic-functions" class="section level2">
 <h2 class="hasAnchor">
@@ -83,7 +89,7 @@
 <div id="evanno" class="section level3">
 <h3 class="hasAnchor">
 <a href="#evanno" class="anchor"></a>Evanno</h3>
-<p>summary.str &lt;- data(“structure”) compute.evanno(summary.str)</p>
+<p>summary.str &lt;- data(“structure”) str_evanno(summary.str)</p>
 </div>
 </div>
 </div>
