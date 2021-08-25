@@ -70,19 +70,18 @@
 <div id="quickpop" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#quickpop" class="anchor"></a>QuickPop</h1></div>
-<p>Tools to work around population genetics analyses</p>
+<p>Tools to work quickly around population genetics analyses</p>
 <p><!-- badges: start --> <a href="https://github.com/biodray/QuickPop/actions"><img src="https://github.com/biodray/QuickPop/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <!-- badges: end --></p>
-<p>This is a work in progress. More functions and vignettes will be added through times…</p>
+<p>This package in intend to ease the repetition of simple task typical of population genetic pipeline. This is a work in progress. More functions and vignettes will be added through times.</p>
 <div id="how-to-install-this-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-install-this-package" class="anchor"></a>How to install this package</h2>
 <p>You can install directly the last version from github</p>
-<pre class="{r}"><code><a href="https://rdrr.io/r/base/Sys.setenv.html"># Change the behaviours of remotes
-Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = "true")
-
-# Load
-library(remotes)
+<pre class="{r}"><code><a href="https://remotes.r-lib.org">library(remotes)
 remotes::install_github("biodray/QuickPop")</a></code></pre>
+<p>For windows user, it is possible that you get into problems. You can try to set this parameter before the installation.</p>
+<pre class="{r}"><code><a href="https://rdrr.io/r/base/Sys.setenv.html"># Change the behaviours of remotes
+Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = "true")</a></code></pre>
 </div>
 </div>
   </div>
