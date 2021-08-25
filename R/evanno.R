@@ -10,15 +10,15 @@
 #'
 #' @examples
 #' # provide some examples of how to use your function
-#' summary.str <- data(structure)
-#' str_evanno(summary.str)
+#' #summary.str <- data(structure)
+#' strc_evanno(summary.str)
 #'
 #' @export
-str_evanno <- function(df){
+strc_evanno <- function(df){
 
   evanno.res <- df %>% dplyr::group_by(k) %>%
     dplyr::summarise(mean_ln_prob_data = base::mean(.data$ln_prob_data),
-              sd_ln_prob_data = base::sd(.data$ln_prob_data)) %>%
+              sd_ln_prob_data = stats::sd(.data$ln_prob_data)) %>%
     dplyr::mutate(drv1K = NaN,
            drv1K_sd = NaN,
            abs_drv2K = NaN,

@@ -1,7 +1,7 @@
 #' @title Read structure q files
 #'
 #' @description
-#' str_readq(.) read structure q file as produce by faststructure
+#' strc_readq(.) read structure q file as produce by faststructure
 #'
 #' @details
 #' more details to come ...
@@ -11,9 +11,10 @@
 #' @examples
 #' # provide some examples of how to use your function
 #' file.path <- "results_job_k3_r1_q"
-#' str_readq(file.path)
+#' strc_readq(file.path)
 #' @export
-str_readq <- function(file) {
+
+strc_readq <- function(file) {
   struct.int <- readr::read_delim(file,
     delim = " ", trim_ws = T,
     col_names = F
@@ -33,7 +34,7 @@ str_readq <- function(file) {
 #' @title Read structure summary file
 #'
 #' @description
-#' str_readsummary(.) read structure  summary file as produced by faststructure
+#' strc_readsummary(.) read structure  summary file as produced by faststructure
 #'
 #' @details
 #' more details to come ...
@@ -43,10 +44,10 @@ str_readq <- function(file) {
 #' @examples
 #' # provide some examples of how to use your function
 #' file.path <- ".results_job_k3_r1_q"
-#' str_readsummary(file.path)
+#' strc_readsummary(file.path)
 #' @export
 
-str_readsummary <- function(file) {
+strc_readsummary <- function(file) {
   readr::read_csv(file,
     skip = 1
   ) %>% dplyr::select(-c(.data$`1`))
