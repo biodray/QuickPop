@@ -17,8 +17,8 @@
 str_evanno <- function(df){
 
   evanno.res <- df %>% dplyr::group_by(k) %>%
-    dplyr::summarise(mean_ln_prob_data = mean(ln_prob_data),
-              sd_ln_prob_data = sd(ln_prob_data)) %>%
+    dplyr::summarise(mean_ln_prob_data = base::mean(.data$ln_prob_data),
+              sd_ln_prob_data = base::sd(.data$ln_prob_data)) %>%
     dplyr::mutate(drv1K = NaN,
            drv1K_sd = NaN,
            abs_drv2K = NaN,
@@ -37,40 +37,41 @@ str_evanno <- function(df){
   }
 
   # Delta k
-  evanno.res <- evanno.res %>% dplyr::mutate(delta_K = abs_drv2K / sd_ln_prob_data)
+  evanno.res <-  dplyr::mutate(evanno.res,
+                               delta_K = .data$abs_drv2K / .data$sd_ln_prob_data)
 
 
-  ev_graph.1 <- evanno.res %>% ggplot2::ggplot(aes(x=k, y=mean_ln_prob_data)) +
+  ev_graph.1 <-  ggplot(evanno.res, aes(x=.data$k, y=.data$mean_ln_prob_data)) +
     geom_line()+
     geom_point()+
-    geom_errorbar(aes(x=k, ymax=mean_ln_prob_data+sd_ln_prob_data, ymin=mean_ln_prob_data-sd_ln_prob_data, width=0.1))+
+    geom_errorbar(aes(x=.data$k, ymax=.data$mean_ln_prob_data+.data$sd_ln_prob_data, ymin=.data$mean_ln_prob_data-.data$sd_ln_prob_data, width=0.1))+
     scale_x_continuous(breaks=1:10,labels=1:10)+
     labs(x=expression(paste(italic(K))),y=expression(paste("Mean L(",italic(K),") " %+-% " SD"))) +
     theme_bw()
 
   ev_graph.1
 
-  ev_graph.2 <- evanno.res %>% ggplot2::ggplot(aes(x=k, y=drv1K)) +
-    geom_line()+
-    geom_point()+
-    geom_errorbar(aes(x=k, ymax=drv1K+drv1K_sd, ymin=drv1K-drv1K_sd, width=0.1))+
-    scale_x_continuous(breaks=1:10,labels=1:10)+
-    labs(x=expression(paste(italic(K))),y=expression(paste("L'(",italic(K),") " %+-% " SD"))) +
-    theme_bw()
+  ev_graph.2 <-  ggplot(data = evanno.res, aes(x=k, y=drv1K)) +
+    ggplot2::geom_line()+
+    ggplot2::geom_point()+
+    ggplot2::geom_errorbar(aes(x=.data$k, ymax=.data$drv1K+.data$drv1K_sd, ymin=.data$drv1K-.data$drv1K_sd, width=0.1))+
+    ggplot2::scale_x_continuous(breaks=1:10,labels=1:10)+
+    ggplot2::labs(x=expression(paste(italic(K))),y=expression(paste("L'(",italic(K),") " %+-% " SD"))) +
+    ggplot2::theme_bw()
 
   ev_graph.2
 
-  ev_graph.3 <- evanno.res %>% ggplot2::ggplot(aes(x=k, y=abs_drv2K)) +
+  ev_graph.3 <-  ggplot(evanno.res, aes(x=.data$k, y=.data$abs_drv2K)) +
     geom_line()+
     geom_point()+
-    geom_errorbar(aes(x=k, ymax=abs_drv2K+abs_drv2K_sd, ymin=abs_drv2K-abs_drv2K_sd, width=0.1))+
+    geom_errorbar(aes(x=.data$k, ymax=.data$abs_drv2K+.data$abs_drv2K_sd, ymin=.data$abs_drv2K-.data$abs_drv2K_sd, width=0.1))+
     scale_x_continuous(breaks=1:10,labels=1:10)+
     labs(x=expression(paste(italic(K))),y=expression(paste("|L\"(",italic(K),")| " %+-% " SD"))) +
     theme_bw()
 
   ev_graph.3
 
-  ev_graph.4 <- evanno.res %>% ggplot2::ggplot(aes(x=k, y=delta_K)) +
+  ev_graph.4 <- ggplot(data = evanno.res, aes(x=k, y=delta_K)) +
     geom_line()+
     geom_point()+
     scale_x_continuous(breaks=1:10,labels=1:10)+
