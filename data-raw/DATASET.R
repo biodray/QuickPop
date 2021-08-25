@@ -3,12 +3,12 @@
 # strcSummary
 
 # Load raw data from .csv file
-strcSummary <- readr::read_csv("data-raw/results_summary.csv",
+strcSummary.data <- readr::read_csv("data-raw/results_summary.csv",
                                skip = 1) |> dplyr::select(-c(`1`))
 
-strcSummary |> head()
+strcSummary.data |> head()
 
 # Save the cleaned data in the required R package location
 
 
-usethis::use_data(strcSummary, overwrite = T)
+usethis::use_data(strcSummary.data, overwrite = T)

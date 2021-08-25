@@ -26,7 +26,10 @@ reference:
 - title: Structure functions
   contents:
   - contains("strc_")
-
+- title: Dataset within the package
+  contents:
+  - contains(".data")
+  
 authors:
   Audrey Bourret:
     href: https://github.com/biodray
