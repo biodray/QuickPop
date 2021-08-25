@@ -1,6 +1,7 @@
 #' @title Compute Evanno
 #'
 #' @description
+#' `r lifecycle::badge("experimental")`
 #' Compute classical Evanno from structure summary file and return a graphic
 #'
 #' @details

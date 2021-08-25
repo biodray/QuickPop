@@ -7,8 +7,15 @@ Maintainer: Audrey Bourret <audrey.bourret@usherbrooke.ca>
 Depends: R (>= 4.0.0), ggplot2
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-Imports: dplyr, magrittr, ggpubr, readr, stringr, tidyr
-License: GPL-3
+Imports: 
+    dplyr,
+    magrittr,
+    ggpubr,
+    readr,
+    stringr,
+    tidyr,
+    lifecycle
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

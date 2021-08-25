@@ -1,6 +1,7 @@
 #' @title Read structure q files
 #'
 #' @description
+#' `r lifecycle::badge("experimental")`
 #' strc_readq(.) read structure q file as produce by faststructure
 #'
 #' @details
