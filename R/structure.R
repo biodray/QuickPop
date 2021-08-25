@@ -15,7 +15,7 @@
 #' @export
 
 strc_readq <- function(file.path) {
-  struct.int <- read.table(file.path, header = F ) 
+  struct.int <- utils::read.table(file.path, header = F ) 
   names(struct.int) <- c("ID", "PopNum", paste0("Q", 1:(base::ncol(struct.int) - 2)))
 
   struct.int$K <- (ncol(struct.int) - 2)

@@ -16,7 +16,7 @@ Compute classical Evanno from structure summary file and return a graphic
 more details to come ...
 }
 \examples{
-# provide some examples of how to use your function
-strc_evanno(strcSummary)
+head(strcSummary.data)
+strc_evanno(strcSummary.data)
 
 }
