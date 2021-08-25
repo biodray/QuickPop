@@ -10,8 +10,7 @@
 #'
 #' @examples
 #' # provide some examples of how to use your function
-#' #summary.str <- data(structure)
-#' strc_evanno(summary.str)
+#' strc_evanno(strcSummary)
 #'
 #' @export
 strc_evanno <- function(df){
