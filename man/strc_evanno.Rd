@@ -10,6 +10,7 @@ strc_evanno(df)
 \item{df}{Dataframe with structure results}
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 Compute classical Evanno from structure summary file and return a graphic
 }
 \details{

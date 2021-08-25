@@ -70,27 +70,18 @@
 <div id="quickpop" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#quickpop" class="anchor"></a>QuickPop</h1></div>
-<p>Tools to work around population genetics analyses</p>
-<p>This is a work in progress. More functions and vignettes will be added through times…</p>
+<p>Tools to work quickly around population genetics analyses</p>
+<p><!-- badges: start --> <a href="https://github.com/biodray/QuickPop/actions"><img src="https://github.com/biodray/QuickPop/workflows/R-CMD-check/badge.svg" alt="R-CMD-check"></a> <!-- badges: end --></p>
+<p>This package in intend to ease the repetition of simple task typical of population genetic pipeline. This is a work in progress. More functions and vignettes will be added through times.</p>
 <div id="how-to-install-this-package" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-install-this-package" class="anchor"></a>How to install this package</h2>
 <p>You can install directly the last version from github</p>
-<pre class="{r}"><code><a href="https://rdrr.io/r/base/Sys.setenv.html"># Change the behaviours of remotes
-Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = "true")
-
-# Load
-library(remotes)
+<pre class="{r}"><code><a href="https://remotes.r-lib.org">library(remotes)
 remotes::install_github("biodray/QuickPop")</a></code></pre>
-</div>
-<div id="how-to-run-basic-functions" class="section level2">
-<h2 class="hasAnchor">
-<a href="#how-to-run-basic-functions" class="anchor"></a>How to run basic functions</h2>
-<div id="evanno" class="section level3">
-<h3 class="hasAnchor">
-<a href="#evanno" class="anchor"></a>Evanno</h3>
-<p>summary.str &lt;- data(“structure”) str_evanno(summary.str)</p>
-</div>
+<p>For windows user, it is possible that you get into problems. You can try to set this parameter before the installation.</p>
+<pre class="{r}"><code><a href="https://rdrr.io/r/base/Sys.setenv.html"># Change the behaviours of remotes
+Sys.setenv("R_REMOTES_NO_ERRORS_FROM_WARNINGS" = "true")</a></code></pre>
 </div>
 </div>
   </div>
@@ -99,7 +90,8 @@ remotes::install_github("biodray/QuickPop")</a></code></pre>
     <div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
+<li><a href="LICENSE.html">Full license</a></li>
+<li><small>GPL (&gt;= 3)</small></li>
 </ul>
 </div>
 <div class="developers">

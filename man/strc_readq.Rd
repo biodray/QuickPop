@@ -10,6 +10,7 @@ strc_readq(file.path)
 \item{file.path}{Path to the file}
 }
 \description{
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 strc_readq(.) read structure q file as produce by faststructure
 }
 \details{
