@@ -6,29 +6,24 @@
 #' @details
 #' more details to come ...
 #'
-#' @param file Path to the file
+#' @param file.path Path to the file
 #'
 #' @examples
 #' # provide some examples of how to use your function
-#' file.path <- "results_job_k3_r1_q"
-#' strc_readq(file.path)
+#' path.to.file <- "data-raw/results_job_k2_r1_q"
+#' strc_readq(path.to.file)
 #' @export
 
-strc_readq <- function(file) {
-  struct.int <- readr::read_delim(file,
-    delim = " ", trim_ws = T,
-    col_names = F
-  ) %>%
-    dplyr::select(-c(paste0("X", ncol(.data))))
-  names(struct.int) <- c("ID_GQ", "PopNum", paste0("Q", 1:(base::ncol(struct.int) - 2)))
+strc_readq <- function(file.path) {
+  struct.int <- read.table(file.path, header = F ) 
+  names(struct.int) <- c("ID", "PopNum", paste0("Q", 1:(base::ncol(struct.int) - 2)))
 
-  res <- struct.int %>%
-    dplyr::mutate(K = ncol(.) - 2) %>%
-    tidyr::pivot_longer(stringr::str_subset(names(.data), "ID_GQ|PopNum|K", negate = T),
-      names_to = "Qpop", values_to = "Qvalue"
-    )
+  struct.int$K <- (ncol(struct.int) - 2)
+  
+  res <- tidyr::pivot_longer(struct.int, stringr::str_subset(names(struct.int), "ID|PopNum|K", negate = T),
+         names_to = "Qpop", values_to = "Qvalue")
 
-  return(res)
+      return(res)
 }
 
 #' @title Read structure summary file

@@ -4,10 +4,10 @@
 \alias{strc_readq}
 \title{Read structure q files}
 \usage{
-strc_readq(file)
+strc_readq(file.path)
 }
 \arguments{
-\item{file}{Path to the file}
+\item{file.path}{Path to the file}
 }
 \description{
 strc_readq(.) read structure q file as produce by faststructure
@@ -17,6 +17,6 @@ more details to come ...
 }
 \examples{
 # provide some examples of how to use your function
-file.path <- "results_job_k3_r1_q"
+file.path <- "data-raw/results_job_k2_r1_q"
 strc_readq(file.path)
 }
