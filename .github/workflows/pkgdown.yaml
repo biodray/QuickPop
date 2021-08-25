@@ -1,10 +1,9 @@
 on:
   push:
-    branches:
-      - main
-      - master
-    tags:
-      -'*'
+    path:
+      - 'man/**'
+      - 'pkgdown/**'
+      - 'README.md'      
 
 name: pkgdown
 
