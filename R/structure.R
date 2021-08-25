@@ -45,6 +45,6 @@ strc_readq <- function(file.path) {
 
 strc_readsummary <- function(file.path) {
   readr::read_csv(file.path,
-    skip = 1
+    skip = 1, show_col_types = FALSE
   ) %>% dplyr::select(-c(.data$`1`))
 }
