@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • QuickPop</title>
+<title>Read structure q files — strc_readq • QuickPop</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,8 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Read structure q files — strc_readq" />
+<meta property="og:description" content="strc_readq(.) read structure q file as produce by faststructure" />
 
 
 
@@ -58,7 +59,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,54 +106,51 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Read structure q files</h1>
+    
+    <div class="hidden name"><code>strc_readq.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>strc_readq(.) read structure q file as produce by faststructure</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>strc_readq</span><span class='op'>(</span><span class='va'>file.path</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-structure-functions" class="hasAnchor"><a href="#section-structure-functions" class="anchor"></a>Structure functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="strc_evanno.html">strc_evanno()</a></code> </p>
-        </td>
-        <td><p>Compute Evanno</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="strc_readq.html">strc_readq()</a></code> </p>
-        </td>
-        <td><p>Read structure q files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="strc_readsummary.html">strc_readsummary()</a></code> </p>
-        </td>
-        <td><p>Read structure summary file</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>file.path</th>
+      <td><p>Path to the file</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>more details to come ...</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'># provide some examples of how to use your function</span>
+<span class='va'>path.to.file</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span><span class='op'>(</span><span class='st'>"extdata"</span>, <span class='st'>"results_job_k2_r1_q"</span>, package <span class='op'>=</span> <span class='st'>"QuickPop"</span><span class='op'>)</span>
+<span class='fu'>strc_readq</span><span class='op'>(</span><span class='va'>path.to.file</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 1,258 × 5</span>
+#&gt;    ID        PopNum     K Qpop  Qvalue
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;int&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>  <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
+#&gt; <span style='color: #BCBCBC;'> 1</span> NS_SS0963      1     2 Q1    0.995 
+#&gt; <span style='color: #BCBCBC;'> 2</span> NS_SS0963      1     2 Q2    0.004<span style='text-decoration: underline;'>9</span>
+#&gt; <span style='color: #BCBCBC;'> 3</span> NS_SS0983      1     2 Q1    0.997 
+#&gt; <span style='color: #BCBCBC;'> 4</span> NS_SS0983      1     2 Q2    0.003 
+#&gt; <span style='color: #BCBCBC;'> 5</span> NS_SS0719      1     2 Q1    0.996 
+#&gt; <span style='color: #BCBCBC;'> 6</span> NS_SS0719      1     2 Q2    0.004 
+#&gt; <span style='color: #BCBCBC;'> 7</span> NS_SS1001      1     2 Q1    0.995 
+#&gt; <span style='color: #BCBCBC;'> 8</span> NS_SS1001      1     2 Q2    0.005 
+#&gt; <span style='color: #BCBCBC;'> 9</span> NS_SS0936      1     2 Q1    0.998 
+#&gt; <span style='color: #BCBCBC;'>10</span> NS_SS0936      1     2 Q2    0.001<span style='text-decoration: underline;'>9</span>
+#&gt; <span style='color: #949494;'># … with 1,248 more rows</span></div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
