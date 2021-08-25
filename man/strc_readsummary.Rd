@@ -10,10 +10,10 @@ strc_readsummary(file.path)
 \item{file.path}{Path to the file}
 }
 \description{
-strc_readsummary(.) read structure  summary file as produced by faststructure
+strc_readsummary(.) read structure summary file as produced by faststructure
 }
 \details{
-more details to come ...
+Read directly the file as produced by faststructure package
 }
 \examples{
 # provide some examples of how to use your function

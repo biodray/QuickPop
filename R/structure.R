@@ -30,10 +30,10 @@ strc_readq <- function(file.path) {
 #' @title Read structure summary file
 #'
 #' @description
-#' strc_readsummary(.) read structure  summary file as produced by faststructure
+#' strc_readsummary(.) read structure summary file as produced by faststructure
 #'
 #' @details
-#' more details to come ...
+#' Read directly the file as produced by faststructure package
 #'
 #' @param file.path Path to the file
 #'
