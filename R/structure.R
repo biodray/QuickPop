@@ -10,7 +10,7 @@
 #'
 #' @examples
 #' # provide some examples of how to use your function
-#' path.to.file <- "data-raw/results_job_k2_r1_q"
+#' path.to.file <- system.file("extdata", "results_job_k2_r1_q", package = "QuickPop")
 #' strc_readq(path.to.file)
 #' @export
 
@@ -38,7 +38,8 @@ strc_readq <- function(file.path) {
 #'
 #' @examples
 #' # provide some examples of how to use your function
-#' path.to.file <- "data-raw/results_summary.csv"
+#' #path.to.file <- "data-raw/results_summary.csv"
+#' path.to.file <- system.file("extdata", "results_summary.csv", package = "QuickPop")
 #' strc_readsummary(path.to.file)
 #' @export
 
