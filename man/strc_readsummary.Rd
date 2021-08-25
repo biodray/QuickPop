@@ -17,6 +17,7 @@ more details to come ...
 }
 \examples{
 # provide some examples of how to use your function
-path.to.file <- "data-raw/results_summary.csv"
-strc_readsummary(file.path)
+#path.to.file <- "data-raw/results_summary.csv"
+path.to.file <- system.file("extdata", "results_summary.csv", package = "QuickPop")
+strc_readsummary(path.to.file)
 }
