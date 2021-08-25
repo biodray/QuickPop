@@ -17,6 +17,6 @@ more details to come ...
 }
 \examples{
 # provide some examples of how to use your function
-file.path <- "data-raw/results_job_k2_r1_q"
-strc_readq(file.path)
+path.to.file <- "data-raw/results_job_k2_r1_q"
+strc_readq(path.to.file)
 }

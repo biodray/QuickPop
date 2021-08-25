@@ -34,16 +34,16 @@ strc_readq <- function(file.path) {
 #' @details
 #' more details to come ...
 #'
-#' @param file Path to the file
+#' @param file.path Path to the file
 #'
 #' @examples
 #' # provide some examples of how to use your function
-#' file.path <- ".results_job_k3_r1_q"
-#' strc_readsummary(file.path)
+#' path.to.file <- "data-raw/results_summary.csv"
+#' strc_readsummary(path.to.file)
 #' @export
 
-strc_readsummary <- function(file) {
-  readr::read_csv(file,
+strc_readsummary <- function(file.path) {
+  readr::read_csv(file.path,
     skip = 1
   ) %>% dplyr::select(-c(.data$`1`))
 }

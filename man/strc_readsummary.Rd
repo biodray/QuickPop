@@ -4,10 +4,10 @@
 \alias{strc_readsummary}
 \title{Read structure summary file}
 \usage{
-strc_readsummary(file)
+strc_readsummary(file.path)
 }
 \arguments{
-\item{file}{Path to the file}
+\item{file.path}{Path to the file}
 }
 \description{
 strc_readsummary(.) read structure  summary file as produced by faststructure
@@ -17,6 +17,6 @@ more details to come ...
 }
 \examples{
 # provide some examples of how to use your function
-file.path <- ".results_job_k3_r1_q"
+path.to.file <- "data-raw/results_summary.csv"
 strc_readsummary(file.path)
 }
