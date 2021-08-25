@@ -3,7 +3,7 @@ on:
     path:
       - 'man/**'
       - 'pkgdown/**'
-      - 'README.md'      
+      - '**.md'      
 
 name: pkgdown
 
