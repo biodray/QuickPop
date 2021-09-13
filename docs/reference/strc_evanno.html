@@ -119,7 +119,7 @@ Compute classical Evanno from structure summary file and return a graphic" />
 Compute classical Evanno from structure summary file and return a graphic</p>
     </div>
 
-    <pre class="usage"><span class='fu'>strc_evanno</span><span class='op'>(</span><span class='va'>df</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>strc_evanno</span><span class='op'>(</span><span class='va'>df</span>, plot <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"none"</span>, <span class='st'>"full"</span>, <span class='st'>"resume"</span><span class='op'>)</span>, plot.max <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -128,6 +128,14 @@ Compute classical Evanno from structure summary file and return a graphic</p>
       <th>df</th>
       <td><p>Dataframe with structure results</p></td>
     </tr>
+    <tr>
+      <th>plot</th>
+      <td><p>If it return a plot, with full view (4 panels) or all within the same figure</p></td>
+    </tr>
+    <tr>
+      <th>plot.max</th>
+      <td><p>in the graph, return the max value</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
@@ -135,7 +143,8 @@ Compute classical Evanno from structure summary file and return a graphic</p>
     <p>more details to come ...</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>strcSummary.data</span><span class='op'>)</span>
+    <pre class="examples"><div class='input'><span class='co'># How to data should look</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>strcSummary.data</span><span class='op'>)</span>
 </div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 6 × 8</span>
 #&gt;   run_id burnin iterations     k ln_prob_data  mean_llh var_llh mean_alpha
 #&gt;   <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>     <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>   <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>      <span style='color: #949494; font-style: italic;'>&lt;dbl&gt;</span>
@@ -144,8 +153,15 @@ Compute classical Evanno from structure summary file and return a graphic</p>
 #&gt; <span style='color: #BCBCBC;'>3</span> k3_r1   <span style='text-decoration: underline;'>10</span>000     <span style='text-decoration: underline;'>100</span>000     3    -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>132</span><span style='color: #BB0000;'>514</span>  -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>130</span><span style='color: #BB0000;'>849.</span>   <span style='text-decoration: underline;'>3</span>330.      0.388
 #&gt; <span style='color: #BCBCBC;'>4</span> k4_r1   <span style='text-decoration: underline;'>10</span>000     <span style='text-decoration: underline;'>100</span>000     4    -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>129</span><span style='color: #BB0000;'>568.</span> -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>126</span><span style='color: #BB0000;'>999.</span>   <span style='text-decoration: underline;'>5</span>138.      0.231
 #&gt; <span style='color: #BCBCBC;'>5</span> k5_r1   <span style='text-decoration: underline;'>10</span>000     <span style='text-decoration: underline;'>100</span>000     5    -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>126</span><span style='color: #BB0000;'>832.</span> -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>123</span><span style='color: #BB0000;'>725.</span>   <span style='text-decoration: underline;'>6</span>212.      0.234
-#&gt; <span style='color: #BCBCBC;'>6</span> k6_r1   <span style='text-decoration: underline;'>10</span>000     <span style='text-decoration: underline;'>100</span>000     6    -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>124</span><span style='color: #BB0000;'>766</span>  -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>121</span><span style='color: #BB0000;'>382.</span>   <span style='text-decoration: underline;'>6</span>767.      0.232</div><div class='input'><span class='fu'>strc_evanno</span><span class='op'>(</span><span class='va'>strcSummary.data</span><span class='op'>)</span>
-</div><div class='img'><img src='strc_evanno-1.png' alt='' width='700' height='433' /></div><div class='input'>
+#&gt; <span style='color: #BCBCBC;'>6</span> k6_r1   <span style='text-decoration: underline;'>10</span>000     <span style='text-decoration: underline;'>100</span>000     6    -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>124</span><span style='color: #BB0000;'>766</span>  -<span style='color: #BB0000;'>1</span><span style='color: #BB0000; text-decoration: underline;'>121</span><span style='color: #BB0000;'>382.</span>   <span style='text-decoration: underline;'>6</span>767.      0.232</div><div class='input'>
+<span class='co'># To perform Evanno without plot</span>
+<span class='va'>res</span> <span class='op'>&lt;-</span> <span class='fu'>strc_evanno</span><span class='op'>(</span><span class='va'>strcSummary.data</span>, plot <span class='op'>=</span> <span class='st'>"none"</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>res</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "evanno"      "plot.full"   "plot.resume"</div><div class='input'>
+<span class='co'># Different plot options</span>
+<span class='va'>res</span> <span class='op'>&lt;-</span> <span class='fu'>strc_evanno</span><span class='op'>(</span><span class='va'>strcSummary.data</span>, plot <span class='op'>=</span> <span class='st'>"full"</span>, plot.max <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='img'><img src='strc_evanno-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='va'>res</span> <span class='op'>&lt;-</span> <span class='fu'>strc_evanno</span><span class='op'>(</span><span class='va'>strcSummary.data</span>, plot <span class='op'>=</span> <span class='st'>"resume"</span>, plot.max <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='img'><img src='strc_evanno-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

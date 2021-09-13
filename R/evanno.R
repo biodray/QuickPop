@@ -55,11 +55,6 @@ strc_evanno <- function(df, plot = c ("none", "full", "resume"), plot.max = TRUE
     geom_line(na.rm=TRUE)+
     geom_point(na.rm=TRUE)+
     geom_errorbar(aes(x=.data$k, ymax=.data$mean_ln_prob_data+.data$sd_ln_prob_data, ymin=.data$mean_ln_prob_data-.data$sd_ln_prob_data, width=0.1))+
-    # Max
-    geom_point(data = dplyr::filter(evanno.res, mean_ln_prob_data == max(.data$mean_ln_prob_data)), col = "red" )+
-    geom_errorbar(data = dplyr::filter(evanno.res, mean_ln_prob_data == max(.data$mean_ln_prob_data)), col = "red" ,
-                  aes(x=.data$k, ymax=.data$mean_ln_prob_data+.data$sd_ln_prob_data, ymin=.data$mean_ln_prob_data-.data$sd_ln_prob_data, width=0.1))+
-    
     scale_x_continuous(n.breaks = length(unique(evanno.res$k))) +
     labs(x=expression(paste(italic(K))),y=expression(paste("Mean L(",italic(K),") " %+-% " SD"))) +
     theme_bw()
