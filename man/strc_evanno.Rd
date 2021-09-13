@@ -4,10 +4,14 @@
 \alias{strc_evanno}
 \title{Compute Evanno}
 \usage{
-strc_evanno(df)
+strc_evanno(df, plot = c("none", "full", "resume"), plot.max = TRUE)
 }
 \arguments{
 \item{df}{Dataframe with structure results}
+
+\item{plot}{If it return a plot, with full view (4 panels) or all within the same figure}
+
+\item{plot.max}{in the graph, return the max value}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
@@ -17,7 +21,15 @@ Compute classical Evanno from structure summary file and return a graphic
 more details to come ...
 }
 \examples{
+# How to data should look
 head(strcSummary.data)
-strc_evanno(strcSummary.data)
+
+# To perform Evanno without plot
+res <- strc_evanno(strcSummary.data, plot = "none")
+names(res)
+
+# Different plot options
+res <- strc_evanno(strcSummary.data, plot = "full", plot.max = FALSE)
+res <- strc_evanno(strcSummary.data, plot = "resume", plot.max = TRUE)
 
 }
