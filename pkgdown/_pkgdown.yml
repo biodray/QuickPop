@@ -23,9 +23,12 @@ navbar:
       href: https://github.com/biodray/QuickPop
       
 reference:
-- title: Structure functions
+- title: Structure related functions
   contents:
   - contains("strc_")
+- title: PCA related functions
+  contents:
+  - contains("pca_")  
 - title: Dataset within the package
   contents:
   - contains(".data")
