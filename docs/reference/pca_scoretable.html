@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • QuickPop</title>
+<title>Extract PCA score table — pca_scoretable • QuickPop</title>
 
 
 <!-- jquery -->
@@ -39,7 +39,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Extract PCA score table — pca_scoretable" />
+<meta property="og:description" content="
+Compute variance explained by a few PCA axis" />
 
 
 
@@ -58,7 +60,7 @@
   </head>
 
   <body data-spy="scroll" data-target="#toc">
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -105,110 +107,55 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Extract PCA score table</h1>
+    
+    <div class="hidden name"><code>pca_scoretable.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p><a href='https://lifecycle.r-lib.org/articles/stages.html#experimental'><img src='figures/lifecycle-experimental.svg' alt='[Experimental]' /></a>
+Compute variance explained by a few PCA axis</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>pca_scoretable</span><span class='op'>(</span><span class='va'>x</span>, naxe <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span></pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-structure-related-functions" class="hasAnchor"><a href="#section-structure-related-functions" class="anchor"></a>Structure related functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="strc_create_jobs.html">strc_create_jobs()</a></code> </p>
-        </td>
-        <td><p>Create a job file for faststructure package</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="strc_evanno.html">strc_evanno()</a></code> </p>
-        </td>
-        <td><p>Compute Evanno</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="strc_readq.html">strc_readq()</a></code> </p>
-        </td>
-        <td><p>Read structure q files</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="strc_readsummary.html">strc_readsummary()</a></code> </p>
-        </td>
-        <td><p>Read structure summary file</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-pca-related-functions" class="hasAnchor"><a href="#section-pca-related-functions" class="anchor"></a>PCA related functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="pca_scoretable.html">pca_scoretable()</a></code> </p>
-        </td>
-        <td><p>Extract PCA score table</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pca_var.html">pca_var()</a></code> </p>
-        </td>
-        <td><p>Compute variance explained by first PCA axis</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pca_varplot.html">pca_varplot()</a></code> </p>
-        </td>
-        <td><p>Plot variance explained by PCA axis</p></td>
-      </tr>
-    </tbody><tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-dataset-within-the-package" class="hasAnchor"><a href="#section-dataset-within-the-package" class="anchor"></a>Dataset within the package</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      
-      
-    </tbody><tbody>
-      
-      
-      <tr>
-        
-        <td>
-          <p><code><a href="strcSummary.data.html">strcSummary.data</a></code> </p>
-        </td>
-        <td><p>Structure run summary</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>x</th>
+      <td><p>glPCA object</p></td>
+    </tr>
+    <tr>
+      <th>naxe</th>
+      <td><p>number of axis for which you want to extract PCA scores</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>PCA from glPca. It will return a dataframe, including ID and pca.score for the desire number of axis</p>
+
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='co'>## simulate a toy dataset</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'>adegenet</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/adegenet/man/glSim.html'>glSim</a></span><span class='op'>(</span><span class='fl'>50</span>,<span class='fl'>4e3</span>, <span class='fl'>50</span>, ploidy<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='message'>Registered S3 method overwritten by 'spdep':</span>
+#&gt; <span class='message'>  method   from</span>
+#&gt; <span class='message'>  plot.mst ape </span></div><div class='input'><span class='co'>## perform PCA</span>
+<span class='va'>pca1</span> <span class='op'>&lt;-</span> <span class='fu'>adegenet</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/adegenet/man/glPca.html'>glPca</a></span><span class='op'>(</span><span class='va'>x</span>, nf<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span>
+<span class='co'>## Extract variance</span>
+<span class='va'>res</span> <span class='op'>&lt;-</span> <span class='fu'>pca_scoretable</span><span class='op'>(</span><span class='va'>pca1</span>, naxe<span class='op'>=</span><span class='fl'>3</span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>res</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;   ID score.PC1  score.PC2  score.PC3
+#&gt; 1  1 -2.897836  2.7779365  2.4728657
+#&gt; 2  2 -1.921593 -2.4625237  1.0384473
+#&gt; 3  3 -1.747774 -2.0255692 -3.0321781
+#&gt; 4  4 -2.664595 -0.6764288  1.0973202
+#&gt; 5  5 -3.242396 -1.2912680  0.5102435
+#&gt; 6  6 -2.144298 -8.5077827  0.5113998</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
       <h2 data-toc-skip>Contents</h2>
